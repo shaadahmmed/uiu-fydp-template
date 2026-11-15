@@ -24,6 +24,7 @@ adaptation; confirm current submission requirements with your supervisor.
 | Configure the report | [Configuration reference](docs/CONFIGURATION.md) |
 | Publish or update the package | [Publishing guide](docs/PUBLISHING.md) |
 | Understand the conversion | [LaTeX migration notes](docs/MIGRATION.md) |
+| Review version changes | [Changelog](CHANGELOG.md) |
 
 ## Local environment
 
@@ -101,18 +102,24 @@ introduction, background, design, standards and constraints, and conclusion.
 Set the default stage in `template/content.typ` if you use an editor or web app;
 the CLI input `--input stage=fydp-1` overrides that default.
 
-The original logo is used by **root `main.typ`**. You can remove it by deleting
-the `logo: image(...)` argument. The distributable starter has no logo and accepts
-your own approved image through the `logo` parameter.
+Reports build without a logo by default. For a local logo, place your approved
+image in the ignored `local-assets/` directory and run:
+
+```sh
+python3 scripts/project.py build --logo local-assets/uiu.png
+```
+
+The original workspace logo, if present, is kept there for local use. Local
+assets are excluded from Git and the Universe bundle. A project initialized from
+the package can supply its own image through the `logo` parameter.
 
 ## Typst web app
 
 Until Universe publication, create a blank project at [typst.app](https://typst.app/)
-and upload **root `main.typ`, `lib.typ`, the entire `template/` directory, and
-`uiu.png`** from your local copy. Keep the directory structure and set root
-`main.typ` as the main file. Upload `NOTICE` and `LICENSE` alongside the sources.
-To work without the logo, remove the `logo` argument from root `main.typ` and
-omit `uiu.png`. Select compiler 0.15.1 in the project settings when available.
+and upload **root `main.typ`, `lib.typ`, and the entire `template/` directory**
+from your local copy. Keep the directory structure and set root `main.typ` as
+the main file. Upload `NOTICE` and `LICENSE` alongside the sources. Use the latest
+stable compiler, version 0.15.1 or newer. No logo upload is required.
 
 The `template/main.typ` entry point is for initialized package projects. It uses
 an `@preview` import and will not resolve online until the package is accepted.
@@ -158,18 +165,25 @@ For the same example in a repository checkout, replace the import path with
 | Compile integration checks | `python3 scripts/project.py check` | `make check` |
 | Refresh the logo-free thumbnail | `python3 scripts/project.py thumbnail` | `make thumbnail` |
 | Validate and prepare distribution | `python3 scripts/project.py package` | `make package` |
+| Stage into your Universe fork | `python3 scripts/project.py stage --packages-repo ../typst-packages` | — |
 
 Checks initialize the package in a temporary, isolated package directory, then
 compile the generated starter in both stages and exercise optional front matter,
 multiple students, and the minimal API. The release command produces
 `dist/academic-uiu-fydp/0.1.0/`, a `.tar.gz` archive, and its SHA-256 checksum. It uploads
-nothing. CI performs the same packaging checks and retains report PDFs and the
-release archive as downloadable artifacts.
+nothing. It also writes a draft submission description to `dist/universe-pr.md`.
+The bundle uses [a package-specific README](packaging/README.md) so Universe
+readers get instructions that match the distributed files.
+
+CI performs the packaging checks with both the tested baseline and the latest
+stable Typst release and retains report PDFs and the release archive as artifacts.
+To publish, follow [the repository-specific publishing steps](docs/PUBLISHING.md).
+Updating this GitHub repository or passing CI does not publish to Universe.
 
 ## Files
 
 ```text
-main.typ                    Local report entry point, uses supplied UIU logo
+main.typ                    Local report entry point; optional user-supplied logo
 lib.typ                     Reusable report layout and styling
 typst.toml                  Package and template metadata
 template/
@@ -183,7 +197,9 @@ template/
   NOTICE.md                 Attribution copied into initialized projects
 docs/                       Student, educator, configuration, publishing guides
 scripts/project.py          Portable build and packaging helper
-uiu.png                     Supplied logo for local reports
+packaging/README.md         README used in the Universe submission bundle
+CHANGELOG.md                Version history
+local-assets/               Optional local images; ignored and not distributed
 ```
 
 ## License and attribution
@@ -199,8 +215,9 @@ link, and an indication of your changes. The starter includes an acknowledgement
 you can use. The license on this template does not automatically license your
 original research, prose, results, or data.
 
-The original local `uiu.png` is excluded from the Universe bundle and thumbnail;
-no separate redistribution clearance for that logo has been established.
+No university logo is distributed in the public source or Universe bundle.
+The original workspace logo, if present, is kept in ignored `local-assets/`;
+no separate redistribution clearance for it has been established.
 University names and trademarks are not licensed by this project. The included
 example context diagram was created for this adaptation and uses the template's
 CC BY 4.0 license.

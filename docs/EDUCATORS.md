@@ -60,6 +60,6 @@ Typst adaptation, retain a CC BY 4.0 link, and identify your course modification
 Keep `NOTICE`, `LICENSE`, and the student-facing `template/NOTICE.md` with shared
 sources. Do not imply institutional approval unless you have it.
 
-The release helper excludes the supplied university logo. If your institution
+The repository and release bundle do not distribute a university logo. If your institution
 provides redistribution permission, document its terms before including a logo
 in any public package. Students can supply a permitted logo in their own reports.

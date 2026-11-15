@@ -29,8 +29,9 @@ It is the default configuration for student reports, while the function defaults
 allow a minimal report with only a cover, contents, optional lists, and chapters.
 
 Remove an existing dictionary key before replacing it; do not specify a named
-argument twice. When the root entry point supplies `logo`, change it there rather
-than adding a second `logo` key to `project`.
+argument twice. The root entry point supplies `logo` from an optional CLI input;
+use `python3 scripts/project.py build --logo local-assets/uiu.png` rather than
+adding a second `logo` key to `project`.
 
 ## Numbering and structure
 

@@ -17,9 +17,9 @@ Full license: LICENSE, or https://creativecommons.org/licenses/by/4.0/legalcode
 This is a community adaptation. It does not claim endorsement by United
 International University, Swakkhar Shatabda, Overleaf, or Typst.
 
-The supplied uiu.png is retained for local Typst reports. No separate
-logo redistribution policy has been established. It is not included in the
-Typst Universe distribution or its thumbnail. University names, logos, and marks
+No university logo is distributed with the template or its thumbnail. An optional
+logo can be supplied locally; no separate redistribution policy has been
+established for the original supplied logo. University names, logos, and marks
 are not licensed as trademarks by this project.
 
 The original LaTeX sources, auxiliary files, and reference PDF have been removed

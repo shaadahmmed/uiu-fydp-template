@@ -44,7 +44,8 @@ planning, task allocation, constraints, and complex engineering mappings.
 - The bibliography uses Typst's built-in IEEE numeric style instead of `unsrt`.
 - Running headers display the chapter on continuation pages. The LaTeX template's
   separate section mark is not reproduced.
-- The title uses the logo in the local entry point. The package starter is logo-free.
+- The title is logo-free by default. The local entry point accepts an optional
+  user-supplied logo; local assets are not distributed.
 - FYDP-1 can omit implementation while updating all chapter numbers and references.
 
 LaTeX packages loaded without an active example, such as `algorithm2e`, `makeidx`,

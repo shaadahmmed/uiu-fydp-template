@@ -1,4 +1,6 @@
 /build/
 /dist/
+/local-assets/
+__pycache__/
 *.log
 .DS_Store

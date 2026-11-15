@@ -93,8 +93,10 @@ Abstract and acknowledgements are enabled by default. Edit their files in
 enable that page, and include only actual publications with accurate status.
 Use `abstract: none` or `acknowledgements: none` to omit a page if permitted.
 
-The local root entry point uses the supplied logo. To add an approved logo to a
-project initialized from the package, place it in `assets/` and change its show rule:
+Reports do not require a logo. For local source checkouts, put an approved logo in
+`local-assets/` and run `python3 scripts/project.py build --logo local-assets/uiu.png`.
+That directory is ignored by Git and omitted from the package. To add an approved
+logo to a project initialized from the package, place it in `assets/` and change its show rule:
 
 ```typst
 #show: fydp-report.with(..project, logo: image("assets/my-logo.png", width: 28mm))
