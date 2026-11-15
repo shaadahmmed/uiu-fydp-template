@@ -49,7 +49,7 @@ this as part of release packaging. These checks catch broken imports, missing
 assets, invalid citations, and layout syntax errors. They do not assess research
 quality or guarantee that a long student report will have acceptable page breaks.
 
-For offline labs, distribute the repository with Typst 0.15.1 available on `PATH`.
+For offline labs, distribute the repository with Typst 0.15.0 available on `PATH`.
 Normal local builds require no network, external packages, Python libraries, or
 system font installation. Python is needed only for the helper commands.
 

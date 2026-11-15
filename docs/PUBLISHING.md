@@ -67,7 +67,7 @@ Run these commands from this template repository's root. The clone is placed
 beside this repository; use a different path if that folder already exists.
 
 ```sh
-git clone --filter=blob:none --sparse https://github.com/shaadahmmed/packages.git ../typst-packages
+git clone --filter=blob:none --sparse https://github.com/shaadahmmed/typst-package.git ../typst-packages
 git -C ../typst-packages sparse-checkout set packages/preview
 git -C ../typst-packages switch -c add-academic-uiu-fydp-0.1.0
 ```
@@ -110,9 +110,9 @@ Open your fork on GitHub and choose **Compare & pull request**:
 
 - Base repository: `typst/packages`
 - Base branch: `main`
-- Head repository: `shaadahmmed/packages`
+- Head repository: `shaadahmmed/typst-package`
 - Head branch: `add-academic-uiu-fydp-0.1.0`
-- Title: `Add academic-uiu-fydp 0.1.0`
+- Title: `academic-uiu-fydp:0.1.0`
 
 Use the current upstream PR template. Add the description in
 `dist/universe-pr.md`, checking upstream requirements yourself. The generated

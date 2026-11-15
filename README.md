@@ -58,8 +58,8 @@ installed official binary, run `typst update` to update it; for package-manager
 installations, use that package manager's upgrade command. See the
 [official installation instructions](https://github.com/typst/typst#installation).
 
-The template requires **Typst 0.15.1 or newer**. Use the latest stable release for
-normal writing. [.typst-version](.typst-version) and CI record **0.15.1** as the
+The template requires **Typst 0.15.0 or newer**. Use the latest stable release for
+normal writing. [.typst-version](.typst-version) and CI record **0.15.0** as the
 tested baseline for reproducible builds; newer stable versions are accepted by
 the build helper.
 
@@ -119,7 +119,7 @@ Until Universe publication, create a blank project at [typst.app](https://typst.
 and upload **root `main.typ`, `lib.typ`, and the entire `template/` directory**
 from your local copy. Keep the directory structure and set root `main.typ` as
 the main file. Upload `NOTICE` and `LICENSE` alongside the sources. Use the latest
-stable compiler, version 0.15.1 or newer. No logo upload is required.
+stable compiler, version 0.15.0 or newer. No logo upload is required.
 
 The `template/main.typ` entry point is for initialized package projects. It uses
 an `@preview` import and will not resolve online until the package is accepted.

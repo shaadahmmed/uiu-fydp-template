@@ -13,7 +13,7 @@ pages, and Arabic body pages. No university logo is included.
 ## Start a report
 
 Install the latest stable [Typst compiler](https://github.com/typst/typst/releases/latest),
-version 0.15.1 or newer. After this package is accepted on Typst Universe:
+version 0.15.0 or newer. After this package is accepted on Typst Universe:
 
 ```sh
 typst init @preview/academic-uiu-fydp:0.1.0 my-fydp
@@ -84,7 +84,8 @@ The starter enables the abstract and acknowledgements using local files.
 ```
 
 Detailed guides: [configuration](docs/CONFIGURATION.md),
-[students](docs/STUDENTS.md), and [educators](docs/EDUCATORS.md).
+[students](docs/STUDENTS.md), [educators](docs/EDUCATORS.md),
+[conversion notes](docs/MIGRATION.md), and [publishing](docs/PUBLISHING.md).
 Repository-only build commands in those guides apply to a source checkout;
 an initialized project builds directly through its `main.typ`.
 

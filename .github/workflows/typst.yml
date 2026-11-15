@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        compiler: ['0.15.1', 'latest']
+        compiler: ['0.15.0', 'latest']
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
