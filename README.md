@@ -11,9 +11,11 @@ margins, 11 pt New Computer Modern, chapter page breaks, running chapter headers
 Roman preliminary page numbers, and Arabic body page numbers follow the supplied
 LaTeX structure. Line spacing approximates LaTeX's one-and-a-half spacing.
 
-**Status:** version 0.1.0 is prepared for submission; it is **not yet published on
-Typst Universe**. Use the local instructions below now. This is a community
-adaptation; confirm current submission requirements with your supervisor.
+**Status:** version 0.1.0 has been submitted in
+[typst/packages#6418](https://github.com/typst/packages/pull/6418) and is awaiting
+review. It is **not yet published on Typst Universe**. Use the local instructions
+below until acceptance. This is a community adaptation; confirm current report
+requirements with your supervisor.
 
 ## Start here
 

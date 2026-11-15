@@ -2,8 +2,17 @@
 
 Package: **`academic-uiu-fydp`**, version **`0.1.0`**. Source repository:
 [shaadahmmed/uiu-fydp-template](https://github.com/shaadahmmed/uiu-fydp-template).
-The manifest includes that URL and the author credit. The package has been
-prepared for submission; it has not been submitted or accepted by this workflow.
+The manifest includes that URL and the author credit. Version 0.1.0 was submitted
+in [typst/packages#6418](https://github.com/typst/packages/pull/6418) from
+`shaadahmmed/typst-package:add-academic-uiu-fydp-0.1.0`. It is awaiting review and
+has not yet been accepted or published. The steps below document the submission
+process; do not open a duplicate PR for this version.
+
+The PR requests explicit review of the inherited CC BY 4.0 starter terms. The
+official v0.7.0 package checker reports an OSI-only license error even though the
+submission guide permits CC BY licenses. The original license is preserved;
+acceptance depends on the maintainers' review. The template compiles in that
+checker and passes the local integration suite with Typst 0.15.0.
 
 ## What is prepared
 
