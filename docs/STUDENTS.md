@@ -7,6 +7,10 @@ and click **Create project in app**. For local writing, follow the
 [README's local setup](../README.md#prefer-working-on-your-computer).
 Use a separate project for each report and back up your sources and assets.
 
+Already have an Overleaf report? Follow the
+[Overleaf → Typst migration guide](OVERLEAF-TO-TYPST.md) to bring across your
+chapters, figures, tables, and bibliography.
+
 Paths below refer to a project created in the web app or with `typst init`.
 If you cloned the development repository instead, these files are under
 `template/`; compile root `main.typ` and use the repository helper commands.

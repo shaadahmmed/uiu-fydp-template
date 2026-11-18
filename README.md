@@ -8,7 +8,7 @@ automatic numbering, and references. Supports **FYDP-1 and final reports**.
 
 **[Start your report on Typst Universe →](https://typst.app/universe/package/academic-uiu-fydp/)**
 
-[Student guide](docs/STUDENTS.md) · [Report settings](docs/CONFIGURATION.md) · [Original LaTeX template](https://www.overleaf.com/latex/templates/united-international-university-fydp-template-department-of-cse/xbkpdgkgjdhc)
+[Student guide](docs/STUDENTS.md) · [Moving from Overleaf?](docs/OVERLEAF-TO-TYPST.md) · [Report settings](docs/CONFIGURATION.md) · [Original LaTeX template](https://www.overleaf.com/latex/templates/united-international-university-fydp-template-department-of-cse/xbkpdgkgjdhc)
 
 Published as **`academic-uiu-fydp` · v0.1.0**. Adapted by **Shaad Ahmmed** from
 **Swakkhar Shatabda's** LaTeX template.
@@ -33,6 +33,10 @@ Published as **`academic-uiu-fydp` · v0.1.0**. Adapted by **Shaad Ahmmed** from
 That is enough to start writing. **You do not need to clone this repository or
 upload the template files manually.** Keep `main.typ` as the report's entry point;
 you normally do not need to edit it.
+
+**Already started on Overleaf?** Follow the
+[Overleaf → Typst migration guide](docs/OVERLEAF-TO-TYPST.md) to reuse your text,
+images, and bibliography one chapter at a time.
 
 ### Which files should I edit?
 
@@ -154,7 +158,8 @@ users can install **Tinymist** and open the generated project folder.
 | Learn headings, figures, citations, and report writing | [Student guide](docs/STUDENTS.md) · [Typst tutorial](https://typst.app/docs/tutorial/) |
 | Change report settings or add optional pages           | [Configuration reference](docs/CONFIGURATION.md)                                       |
 | Prepare a reviewed copy for a class                    | [Educator guide](docs/EDUCATORS.md)                                                    |
-| Understand differences from the LaTeX original         | [Migration notes](docs/MIGRATION.md)                                                   |
+| Move an existing Overleaf report to Typst              | [Step-by-step migration guide](docs/OVERLEAF-TO-TYPST.md)                              |
+| Understand differences from the LaTeX original         | [Original conversion notes](docs/MIGRATION.md)                                         |
 | Report a template problem                              | [GitHub issues](https://github.com/shaadahmmed/uiu-fydp-template/issues)               |
 
 <details>

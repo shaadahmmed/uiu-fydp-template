@@ -17,6 +17,9 @@ pages, and Arabic body pages. No university logo is included.
 **Create project in app**, and sign in if prompted. No installation or manual
 file uploads are needed. Edit the files below, review the preview, and export a PDF.
 
+**Coming from Overleaf?** The [migration guide](docs/OVERLEAF-TO-TYPST.md) shows
+how to reuse your chapters, images, and bibliography, with a syntax cheat sheet.
+
 ### Prefer working on your computer?
 
 Install the latest stable

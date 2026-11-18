@@ -1,25 +1,29 @@
 # LaTeX conversion notes
 
+**Moving your own report from Overleaf?** Use the
+[step-by-step Overleaf → Typst guide](OVERLEAF-TO-TYPST.md). This page records how
+the original template was adapted, not the student migration workflow.
+
 The conversion followed the supplied `.tex` sources. The original bundled PDF
 was older and differed in title text, chapter sections, and front matter.
 The legacy LaTeX files, auxiliary outputs, and reference PDF have been removed;
 this repository now contains the Typst implementation. The table below records
 the historical file mapping. The original template remains linked in [NOTICE](../NOTICE).
 
-| Original file | Typst counterpart |
-| --- | --- |
-| `fydp.tex` | `lib.typ`, root `main.typ`, `template/content.typ` |
-| `0.0.title.tex` | `fydp-report` title page, `template/project.typ` |
-| `0.1.abstract.tex` | `template/front-matter/abstract.typ` |
-| `0.2.ack.tex` | `template/front-matter/acknowledgements.typ` |
-| `0.3.pub.tex` | `template/front-matter/publications.typ` |
-| `1.intro.tex` | `template/chapters/01-introduction.typ` |
-| `2.back.tex` | `template/chapters/02-background.typ` |
-| `3.design.tex` | `template/chapters/03-project-design.typ` |
-| `4.implementation.tex` | `template/chapters/04-implementation.typ` |
-| `5.sic.tex` | `template/chapters/05-standards.typ` |
-| `6.conclusion.tex` | `template/chapters/06-conclusion.typ` |
-| `fydp.bib` | `template/references.bib` |
+| Original file          | Typst counterpart                                  |
+| ---------------------- | -------------------------------------------------- |
+| `fydp.tex`             | `lib.typ`, root `main.typ`, `template/content.typ` |
+| `0.0.title.tex`        | `fydp-report` title page, `template/project.typ`   |
+| `0.1.abstract.tex`     | `template/front-matter/abstract.typ`               |
+| `0.2.ack.tex`          | `template/front-matter/acknowledgements.typ`       |
+| `0.3.pub.tex`          | `template/front-matter/publications.typ`           |
+| `1.intro.tex`          | `template/chapters/01-introduction.typ`            |
+| `2.back.tex`           | `template/chapters/02-background.typ`              |
+| `3.design.tex`         | `template/chapters/03-project-design.typ`          |
+| `4.implementation.tex` | `template/chapters/04-implementation.typ`          |
+| `5.sic.tex`            | `template/chapters/05-standards.typ`               |
+| `6.conclusion.tex`     | `template/chapters/06-conclusion.typ`              |
+| `fydp.bib`             | `template/references.bib`                          |
 
 ## Preserved behavior
 
