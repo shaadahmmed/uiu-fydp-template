@@ -12,18 +12,22 @@ pages, and Arabic body pages. No university logo is included.
 
 ## Start a report
 
-Install the latest stable [Typst compiler](https://github.com/typst/typst/releases/latest),
-version 0.15.0 or newer. After this package is accepted on Typst Universe:
+**In your browser (recommended):** Open the
+[Typst Universe page](https://typst.app/universe/package/academic-uiu-fydp/), click
+**Create project in app**, and sign in if prompted. No installation or manual
+file uploads are needed. Edit the files below, review the preview, and export a PDF.
+
+### Prefer working on your computer?
+
+Install the latest stable
+[Typst compiler](https://github.com/typst/typst/releases/latest), version 0.15.0
+or newer, then run:
 
 ```sh
 typst init @preview/academic-uiu-fydp:0.1.0 my-fydp
 cd my-fydp
 typst compile main.typ report.pdf
 ```
-
-In the Typst web app, open this template's Universe page and choose **Start from
-template** after publication. Before acceptance, use the local instructions in
-the [source repository](https://github.com/shaadahmmed/uiu-fydp-template).
 
 1. Edit `project.typ` with the title, student names and IDs, date, and supervisors.
 2. Replace the examples in `front-matter/`, `chapters/`, and `assets/`.
@@ -55,25 +59,25 @@ Introduce the problem and your objectives.
 
 Apply `fydp-report` as a show rule. The body is supplied automatically by the rule.
 
-| Option | Default | Purpose |
-| --- | --- | --- |
-| `title` | Example title | Cover title content |
-| `students` | One example student | Nonempty array of `(name: "…", id: "…")` dictionaries |
-| `date` | `[Month Year]` | Explicit submission date |
-| `university` | United International University | Cover institution |
-| `department` | Department of Computer Science and Engineering | Cover department |
-| `degree` | Bachelor of Science in Computer Science and Engineering | Degree wording |
-| `supervisors` | `()` | Array of supervisor content, e.g. `([Name],)` |
-| `logo` | `none` | User-provided image/content |
-| `abstract` | `none` | Abstract content; omit with `none` |
-| `acknowledgements` | `none` | Acknowledgements content; omit with `none` |
-| `publications` | `none` | Optional publication-list content |
-| `show-figure-list` | `true` | Include List of Figures |
-| `show-table-list` | `true` | Include List of Tables |
-| `outline-depth` | `3` | Contents heading depth |
-| `font` | `"New Computer Modern"` | Body font |
-| `font-size` | `11pt` | Body text size |
-| `margin` | `3cm` | Page margins |
+| Option             | Default                                                 | Purpose                                               |
+| ------------------ | ------------------------------------------------------- | ----------------------------------------------------- |
+| `title`            | Example title                                           | Cover title content                                   |
+| `students`         | One example student                                     | Nonempty array of `(name: "…", id: "…")` dictionaries |
+| `date`             | `[Month Year]`                                          | Explicit submission date                              |
+| `university`       | United International University                         | Cover institution                                     |
+| `department`       | Department of Computer Science and Engineering          | Cover department                                      |
+| `degree`           | Bachelor of Science in Computer Science and Engineering | Degree wording                                        |
+| `supervisors`      | `()`                                                    | Array of supervisor content, e.g. `([Name],)`         |
+| `logo`             | `none`                                                  | User-provided image/content                           |
+| `abstract`         | `none`                                                  | Abstract content; omit with `none`                    |
+| `acknowledgements` | `none`                                                  | Acknowledgements content; omit with `none`            |
+| `publications`     | `none`                                                  | Optional publication-list content                     |
+| `show-figure-list` | `true`                                                  | Include List of Figures                               |
+| `show-table-list`  | `true`                                                  | Include List of Tables                                |
+| `outline-depth`    | `3`                                                     | Contents heading depth                                |
+| `font`             | `"New Computer Modern"`                                 | Body font                                             |
+| `font-size`        | `11pt`                                                  | Body text size                                        |
+| `margin`           | `3cm`                                                   | Page margins                                          |
 
 The starter enables the abstract and acknowledgements using local files.
 `guidance(body)` is also exported for optional instructional callouts:
@@ -82,6 +86,9 @@ The starter enables the abstract and acknowledgements using local files.
 #import "@preview/academic-uiu-fydp:0.1.0": guidance
 #guidance[Replace this instruction with your own project content.]
 ```
+
+For a Typst/LaTeX comparison and Overleaf plan limitations, see the
+[source repository README](https://github.com/shaadahmmed/uiu-fydp-template#why-typst-how-does-it-compare-with-latex).
 
 Detailed guides: [configuration](docs/CONFIGURATION.md),
 [students](docs/STUDENTS.md), [educators](docs/EDUCATORS.md),

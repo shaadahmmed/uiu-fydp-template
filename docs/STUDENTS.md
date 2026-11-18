@@ -2,11 +2,16 @@
 
 ## Start a report
 
-Follow the [README environment setup](../README.md#local-environment), then
-compile root `main.typ`. Work in a separate copy for each project and keep it in
-version control. Commit the editable Typst sources and assets; `build/` is ignored.
+The easiest option is to open [the template on Typst Universe](https://typst.app/universe/package/academic-uiu-fydp/)
+and click **Create project in app**. For local writing, follow the
+[README's local setup](../README.md#prefer-working-on-your-computer).
+Use a separate project for each report and back up your sources and assets.
 
-Edit `template/project.typ` first. Each student is a dictionary with `name` and
+Paths below refer to a project created in the web app or with `typst init`.
+If you cloned the development repository instead, these files are under
+`template/`; compile root `main.typ` and use the repository helper commands.
+
+Edit `project.typ` first. Each student is a dictionary with `name` and
 `id`; keep IDs in quotes to preserve leading zeros. Arrays with one item require
 a trailing comma:
 
@@ -24,20 +29,20 @@ instead of today's date so that later rebuilds keep the original submission date
 
 ## Write chapters
 
-Edit the corresponding file in `template/chapters/`. Every chapter should start
+Edit the corresponding file in `chapters/`. Every chapter should start
 with one or two sentences describing its scope. Replace instructional paragraphs
 with your own work and fill empty sections only where relevant.
 
-| LaTeX | Typst |
-| --- | --- |
-| `\chapter{Introduction}` | `= Introduction` |
-| `\section{Objectives}` | `== Objectives` |
-| `\subsection{Scope}` | `=== Scope` |
-| `\textbf{bold}` | `*bold*` |
-| `\textit{italic}` | `_italic_` |
-| `\cite{key}` | `@key` |
-| `\label{fig:design}` | `<fig:design>` after the figure |
-| `Figure~\ref{fig:design}` | `@fig:design` |
+| LaTeX                     | Typst                           |
+| ------------------------- | ------------------------------- |
+| `\chapter{Introduction}`  | `= Introduction`                |
+| `\section{Objectives}`    | `== Objectives`                 |
+| `\subsection{Scope}`      | `=== Scope`                     |
+| `\textbf{bold}`           | `*bold*`                        |
+| `\textit{italic}`         | `_italic_`                      |
+| `\cite{key}`              | `@key`                          |
+| `\label{fig:design}`      | `<fig:design>` after the figure |
+| `Figure~\ref{fig:design}` | `@fig:design`                   |
 
 Typst automatically supplies “Figure”, “Table”, “Chapter”, or “Equation” when
 referencing a numbered element. Do not write `Figure @fig:design`.
@@ -65,21 +70,28 @@ List of Tables. The standards chapter provides two examples. Replace dashes with
 your actual assessment and explain every selected mapping. Do not copy example
 mapping claims without evidence.
 
-Add BibTeX entries to `template/references.bib` and cite them using `@key`. Typst
+Add BibTeX entries to `references.bib` and cite them using `@key`. Typst
 builds the IEEE numeric bibliography in citation order; no BibTeX command or
 repeated compile passes are needed. The inherited algorithm-design book is a
 syntax example; remove it and its citation if it is irrelevant to your work.
 
 ## FYDP-1 and final reports
 
+In `content.typ`, change `default: "final"` to `default: "fydp-1"` for FYDP-1.
+Leave it as `"final"` for the final report. This works in the web app and local
+editor previews.
+
+For a local initialized project, you can also select the stage when compiling:
+
 ```sh
-python3 scripts/project.py build --stage fydp-1
-python3 scripts/project.py build --stage final
+typst compile --input stage=fydp-1 main.typ fydp-1.pdf
+typst compile --input stage=final main.typ report.pdf
 ```
 
-Outputs are `build/fydp-1.pdf` and `build/fydp.pdf`. In `template/content.typ`,
-change the `default: "final"` value to `default: "fydp-1"` to select the stage
-for editor/web previews. The CLI argument takes priority.
+The CLI argument takes priority over the default. If you cloned the development
+repository, use `python3 scripts/project.py build --stage fydp-1` or
+`python3 scripts/project.py build --stage final` instead; those outputs are
+`build/fydp-1.pdf` and `build/fydp.pdf`.
 
 FYDP-1 omits implementation and results. You may include a preliminary version by
 editing that conditional include, with your educator's guidance. Introduction,
@@ -89,20 +101,23 @@ versions. Renumbering is automatic.
 ## Front matter and logo
 
 Abstract and acknowledgements are enabled by default. Edit their files in
-`template/front-matter/`. Uncomment the `publications` entry in `project.typ` to
+`front-matter/`. Uncomment the `publications` entry in `project.typ` to
 enable that page, and include only actual publications with accurate status.
 Use `abstract: none` or `acknowledgements: none` to omit a page if permitted.
 
-Reports do not require a logo. For local source checkouts, put an approved logo in
-`local-assets/` and run `python3 scripts/project.py build --logo local-assets/uiu.png`.
-That directory is ignored by Git and omitted from the package. To add an approved
-logo to a project initialized from the package, place it in `assets/` and change its show rule:
+Reports do not require a logo. To add an approved logo to a web or locally
+initialized project, place it in `assets/` and replace the existing show rule in
+`main.typ` with:
 
 ```typst
 #show: fydp-report.with(..project, logo: image("assets/my-logo.png", width: 28mm))
 ```
 
 Do not add a second `logo` argument if one is already present in your dictionary.
+
+For development repository checkouts, put an approved logo in `local-assets/` and
+run `python3 scripts/project.py build --logo local-assets/uiu.png`. That directory
+is ignored by Git and omitted from the package.
 
 ## Before submission
 
@@ -116,13 +131,13 @@ Do not add a second `logo` argument if one is already present in your dictionary
 
 ## Troubleshooting
 
-| Problem | Fix |
-| --- | --- |
-| `package not found` before publication | Compile root `main.typ`; `template/main.typ` is the future package starter. |
-| File outside project root | Open the full repository and compile with `--root .`. |
-| Missing image | Check the path relative to the chapter file, including capitalization. |
-| Unknown citation or reference | Check the BibTeX key or `<label>` spelling. |
-| Font differs between machines | Use the pinned compiler and `--ignore-system-fonts`. |
-| Changes do not appear in the PDF | Rebuild and open `build/fydp.pdf`, or `build/fydp-1.pdf` for FYDP-1. |
-| Empty List of Figures/Tables | Add captioned figures or set the relevant `show-…-list` option to `false`. |
-| Typst syntax error | Check commas in dictionaries, matching brackets, and the first compiler diagnostic. |
+| Problem                          | Fix                                                                                                                                                 |
+| -------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Package download fails           | Check your internet connection and that the import uses `@preview/academic-uiu-fydp:0.1.0`. Local initialization needs network access on first use. |
+| File outside project root        | Keep chapters and assets inside your project folder. For a repository checkout, compile root `main.typ` with `--root .`.                            |
+| Missing image                    | Check the path relative to the chapter file, including capitalization.                                                                              |
+| Unknown citation or reference    | Check the BibTeX key or `<label>` spelling.                                                                                                         |
+| Font differs between machines    | Use the same compiler version and, locally, compile with `--ignore-system-fonts`.                                                                   |
+| Changes do not appear in the PDF | Check that `main.typ` is the entry point. Export a fresh PDF in the web app, or rebuild and open your chosen local output file.                     |
+| Empty List of Figures/Tables     | Add captioned figures or set the relevant `show-…-list` option to `false`.                                                                          |
+| Typst syntax error               | Check commas in dictionaries, matching brackets, and the first compiler diagnostic.                                                                 |

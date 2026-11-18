@@ -1,134 +1,116 @@
-# UIU CSE Final Year Design Project Report (Typst)
+# UIU CSE FYDP Report · Typst
 
-A community Typst adaptation of the **United International University Final Year
-Design Project template, Department of Computer Science and Engineering**.
-Converted by **Shaad Ahmmed** from the LaTeX template by **Swakkhar Shatabda**.
+**Your project deserves more time than your formatting.**
 
-Use this starter for FYDP-1 and final reports. It includes a title page, abstract,
-acknowledgements, optional publications, contents, figure and table lists, six
-chapters, engineering mapping tables, and a numeric bibliography. A4 pages, 3 cm
-margins, 11 pt New Computer Modern, chapter page breaks, running chapter headers,
-Roman preliminary page numbers, and Arabic body page numbers follow the supplied
-LaTeX structure. Line spacing approximates LaTeX's one-and-a-half spacing.
+Write your United International University CSE Final Year Design Project report
+with a ready-to-use Typst template: a formatted cover, editable chapters,
+automatic numbering, and references. Supports **FYDP-1 and final reports**.
 
-**Status:** version 0.1.0 has been submitted in
-[typst/packages#6418](https://github.com/typst/packages/pull/6418) and is awaiting
-review. It is **not yet published on Typst Universe**. Use the local instructions
-below until acceptance. This is a community adaptation; confirm current report
-requirements with your supervisor.
+**[Start your report on Typst Universe →](https://typst.app/universe/package/academic-uiu-fydp/)**
 
-## Start here
+[Student guide](docs/STUDENTS.md) · [Report settings](docs/CONFIGURATION.md) · [Original LaTeX template](https://www.overleaf.com/latex/templates/united-international-university-fydp-template-department-of-cse/xbkpdgkgjdhc)
 
-| Your goal | Where to go |
-| --- | --- |
-| Write your report | [Student guide](docs/STUDENTS.md) |
-| Teach or distribute the template | [Educator guide](docs/EDUCATORS.md) |
-| Configure the report | [Configuration reference](docs/CONFIGURATION.md) |
-| Publish or update the package | [Publishing guide](docs/PUBLISHING.md) |
-| Understand the conversion | [LaTeX migration notes](docs/MIGRATION.md) |
-| Review version changes | [Changelog](CHANGELOG.md) |
+Published as **`academic-uiu-fydp` · v0.1.0**. Adapted by **Shaad Ahmmed** from
+**Swakkhar Shatabda's** LaTeX template.
 
-## Local environment
+> This is a community adaptation, not an official university release. Confirm
+> your supervisor's current formatting and submission requirements before use.
 
-These instructions use the full development checkout. A project initialized
-from the published template only needs Typst and its own `main.typ`.
+![Preview of the UIU CSE FYDP report template](thumbnail.png)
 
-1. Install the **latest stable version of Typst** from the
-   [official latest release](https://github.com/typst/typst/releases/latest).
-   Extract the archive for your operating system and place the `typst` executable
-   on your `PATH`. Alternatively, use one of the installation commands below.
-2. Install **Python 3.11 or newer** for the optional build/release helpers.
-   Python's standard library is sufficient; no `pip` packages or virtual
-   environment are needed. GNU Make is optional.
-3. Open a terminal in this directory, then run:
+## Start in your browser — recommended
 
-   ```sh
-   typst --version
-   python3 scripts/project.py doctor
-   python3 scripts/project.py build
-   ```
+**No installation, terminal, Git, or LaTeX knowledge required.**
 
-| Platform or tool | Install command |
-| --- | --- |
-| macOS (Homebrew) | `brew install typst` |
-| Windows (WinGet) | `winget install --id Typst.Typst` |
-| Any platform with a compatible Rust toolchain | `cargo install --locked typst-cli` |
-| Linux or manual installation | Download the archive for your platform from the [latest release](https://github.com/typst/typst/releases/latest). |
+1. Open the [template on Typst Universe](https://typst.app/universe/package/academic-uiu-fydp/).
+2. Click **Create project in app** and sign in or create a Typst account if prompted.
+3. Open **`project.typ`** and replace the title, student names and IDs, submission
+   date, and supervisor details. Uncomment the supervisor line to use it.
+4. Write in **`chapters/`** and **`front-matter/`**. Replace the example diagram
+   in **`assets/`** and add your sources to **`references.bib`**.
+5. Review the live preview, then export your report as a **PDF** from the editor.
 
-Package-manager versions can lag behind the latest release. For a manually
-installed official binary, run `typst update` to update it; for package-manager
-installations, use that package manager's upgrade command. See the
-[official installation instructions](https://github.com/typst/typst#installation).
+That is enough to start writing. **You do not need to clone this repository or
+upload the template files manually.** Keep `main.typ` as the report's entry point;
+you normally do not need to edit it.
 
-The template requires **Typst 0.15.0 or newer**. Use the latest stable release for
-normal writing. [.typst-version](.typst-version) and CI record **0.15.0** as the
-tested baseline for reproducible builds; newer stable versions are accepted by
-the build helper.
+### Which files should I edit?
 
-On Windows, use `py -3` in place of `python3` if needed. Generated reports go to
-`build/`; the default output is **`build/fydp.pdf`**.
+These paths are for projects created in the web app or with `typst init`:
 
-Typst embeds the fonts used here. The build helper ignores system fonts for
-consistent output and does not download Typst packages. No LaTeX installation is
-required. The compiler is already available in the original development workspace.
+| File or folder   | What to put there                                                                |
+| ---------------- | -------------------------------------------------------------------------------- |
+| `project.typ`    | Report title, team members, IDs, date, supervisors, and page options             |
+| `front-matter/`  | Abstract, acknowledgements, and optional publications                            |
+| `chapters/`      | Your introduction, background, design, implementation, standards, and conclusion |
+| `assets/`        | Your diagrams and images                                                         |
+| `references.bib` | Your bibliography; cite an entry with `@its-key`                                 |
+| `content.typ`    | Report stage and chapter selection                                               |
 
-You can also compile without Python:
+**Writing FYDP-1?** In `content.typ`, change `default: "final"` to
+`default: "fydp-1"`. This omits the implementation and results chapter and updates
+chapter numbering automatically. Leave `"final"` for the final report, and check
+required sections with your supervisor.
 
-```sh
-mkdir -p build
-typst compile --root . --ignore-system-fonts main.typ build/fydp.pdf
-typst watch --root . --ignore-system-fonts main.typ build/fydp.pdf
-```
+**Need a logo?** No university logo is included or required to compile. Add only
+an approved image; the [student guide](docs/STUDENTS.md#front-matter-and-logo)
+explains how.
 
-Create `build` using File Explorer or `mkdir build` on Windows. VS Code users can
-install the recommended **Tinymist** extension, open the repository directory,
-and preview **root `main.typ`**. The checked-in settings use the workspace as the
-project root and leave PDF export to the build command.
+## Why Typst? How does it compare with LaTeX?
 
-## Write your report
+Typst and LaTeX both turn text-based source files into formatted documents.
+**Overleaf is an online editor for LaTeX**, not a separate typesetting language.
 
-1. Edit **`template/project.typ`**: title, student names and IDs, explicit date,
-   supervisors, and front-matter options.
-2. Replace the text in **`template/front-matter/`** and **`template/chapters/`**.
-3. Replace the example diagram in `template/assets/` and update
-   **`template/references.bib`** with sources you actually use.
-4. Build and review the PDF, including its contents, lists, citations, and tables.
+| Everyday task                        | Typst                                                              | LaTeX                                                                                           |
+| ------------------------------------ | ------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------- |
+| See changes while writing            | Incremental compilation reuses previous work for fast previews     | Usually reruns the typesetting engine; larger projects can take longer                          |
+| Build citations and cross-references | Built into the compiler; no separate BibTeX/Biber step             | Often needs multiple passes and a bibliography tool, usually automated by Overleaf or `latexmk` |
+| Learn basic formatting               | Short syntax: `= Heading`, `*bold*`, `@citation`                   | Commands such as `\chapter{Heading}`, `\textbf{bold}`, `\cite{key}`                             |
+| Work locally                         | One compiler, plus an editor of your choice                        | A TeX distribution and an editor/build setup                                                    |
+| Reuse existing LaTeX material        | `.bib` libraries work; LaTeX commands and packages need conversion | Best fit for existing `.tex` projects and required LaTeX classes                                |
 
-```sh
-python3 scripts/project.py watch
-python3 scripts/project.py build --stage fydp-1
-```
+**Performance in practice:** Typst is designed for fast, incremental updates, so
+small edits often appear almost immediately. Full PDF export still takes work;
+report length, images, layout, hardware, and caching affect the result. This
+repository does **not** include a controlled Typst-vs-LaTeX benchmark, so there is
+no claimed speed multiplier. See [Typst's guide for LaTeX users](https://typst.app/docs/guides/for-latex-users/)
+for the underlying differences.
 
-FYDP-1 omits the implementation chapter by default. Both stages retain the
-introduction, background, design, standards and constraints, and conclusion.
-Set the default stage in `template/content.typ` if you use an editor or web app;
-the CLI input `--input stage=fydp-1` overrides that default.
+LaTeX still has a larger, mature package ecosystem. If your supervisor requires
+LaTeX source or a specific LaTeX class, use the
+[original Overleaf template](https://www.overleaf.com/latex/templates/united-international-university-fydp-template-department-of-cse/xbkpdgkgjdhc)
+instead. This adaptation follows its structure; it does not promise identical
+line breaks or pagination.
 
-Reports build without a logo by default. For a local logo, place your approved
-image in the ignored `local-assets/` directory and run:
+### Overleaf Free: limitations to know before starting
 
-```sh
-python3 scripts/project.py build --logo local-assets/uiu.png
-```
+Overleaf is convenient, but its free plan can matter for a team report:
 
-The original workspace logo, if present, is kept there for local use. Local
-assets are excluded from Git and the Universe bundle. A project initialized from
-the package can supply its own image through the `logo` parameter.
+| Limitation                                      | What it means for your FYDP                                                                                                            |
+| ----------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------- |
+| **1 invited collaborator per project**          | The owner can invite one editor/reviewer; a larger team plus a supervisor may need a paid or institutional plan.                       |
+| **Basic compile timeout**                       | Long or graphics-heavy reports can hit the time limit. Optimizing the project or using a plan with more compile time may be necessary. |
+| **Only the previous 24 hours of history**       | Do not rely on the free history as your only backup.                                                                                   |
+| **No track changes or Git integration on Free** | These review/version-control features require a paid or institutional plan.                                                            |
 
-## Typst web app
+These are **Overleaf service limits, not LaTeX limits**. Local LaTeX has no
+Overleaf-imposed compile timeout or subscription requirement.
 
-Until Universe publication, create a blank project at [typst.app](https://typst.app/)
-and upload **root `main.typ`, `lib.typ`, and the entire `template/` directory**
-from your local copy. Keep the directory structure and set root `main.typ` as
-the main file. Upload `NOTICE` and `LICENSE` alongside the sources. Use the latest
-stable compiler, version 0.15.0 or newer. No logo upload is required.
+Typst's web app also has plan limits: Free currently lists **200 MB storage and
+100 files per project**, while features such as comments and Git sync are paid.
+The **local Typst compiler is free and open source** and is not subject to web-app
+plan limits. Check [Overleaf's plans](https://www.overleaf.com/user/subscription/plans)
+and [Typst's plans](https://typst.app/pricing/) before choosing; features can change
+(checked November 2026).
 
-The `template/main.typ` entry point is for initialized package projects. It uses
-an `@preview` import and will not resolve online until the package is accepted.
+## Prefer working on your computer?
 
-## Package usage after publication
+Install [Typst 0.15.0 or newer](https://github.com/typst/typst#installation).
+For example, use `winget install --id Typst.Typst` on Windows or
+`brew install typst` on macOS. Linux binaries are available from the
+[official releases](https://github.com/typst/typst/releases/latest).
 
-These commands are for **after acceptance on Typst Universe**:
+Then run:
 
 ```sh
 typst init @preview/academic-uiu-fydp:0.1.0 my-fydp
@@ -136,90 +118,81 @@ cd my-fydp
 typst compile main.typ report.pdf
 ```
 
-The generated project owns its chapter files and configuration. Styling stays in
-the versioned package. A minimal report would be:
+Open **`report.pdf`** to see the result. For automatic rebuilds while editing:
 
-```typst
-#import "@preview/academic-uiu-fydp:0.1.0": fydp-report
-#show: fydp-report.with(
-  title: [My Final Year Design Project],
-  students: ((name: "Student Name", id: "011 XXX XXX"),),
-  date: [November 2026],
-  show-figure-list: false,
-  show-table-list: false,
-)
-
-= Introduction
-Introduce your project here.
+```sh
+typst watch main.typ report.pdf
 ```
 
-For the same example in a repository checkout, replace the import path with
-`"lib.typ"` and save it at the root.
+The first initialization downloads the package, so an internet connection is
+needed. Once the package is cached, this starter can compile offline. You do
+**not** need Python, Make, or a LaTeX installation. For an editor preview, VS Code
+users can install **Tinymist** and open the generated project folder.
 
-## Build and release commands
+## What is already included?
 
-| Task | Portable command | Make alias |
-| --- | --- | --- |
-| Check environment | `python3 scripts/project.py doctor` | `make setup` |
-| Final report | `python3 scripts/project.py build` | `make build` |
-| FYDP-1 report | `python3 scripts/project.py build --stage fydp-1` | `make fydp-1` |
-| Live preview | `python3 scripts/project.py watch` | `make watch` |
-| Compile integration checks | `python3 scripts/project.py check` | `make check` |
-| Refresh the logo-free thumbnail | `python3 scripts/project.py thumbnail` | `make thumbnail` |
-| Validate and prepare distribution | `python3 scripts/project.py package` | `make package` |
-| Stage into your Universe fork | `python3 scripts/project.py stage --packages-repo ../typst-packages` | — |
+- **Report structure:** cover, abstract, acknowledgements, optional publications,
+  and six editable chapter files with guidance.
+- **Automatic formatting:** contents, figure/table lists, chapter headers,
+  Roman front-matter pages, and Arabic body pages.
+- **Academic essentials:** figures, tables, equations, engineering mapping
+  tables, and an IEEE numeric bibliography using your `.bib` file.
+- **Layout defaults:** A4 paper, 3 cm margins, and 11 pt New Computer Modern.
 
-Checks initialize the package in a temporary, isolated package directory, then
-compile the generated starter in both stages and exercise optional front matter,
-multiple students, and the minimal API. The release command produces
-`dist/academic-uiu-fydp/0.1.0/`, a `.tar.gz` archive, and its SHA-256 checksum. It uploads
-nothing. It also writes a draft submission description to `dist/universe-pr.md`.
-The bundle uses [a package-specific README](packaging/README.md) so Universe
-readers get instructions that match the distributed files.
+### Before you submit
 
-CI performs the packaging checks with both the tested baseline and the latest
-stable Typst release and retains report PDFs and the release archive as artifacts.
-To publish, follow [the repository-specific publishing steps](docs/PUBLISHING.md).
-Updating this GitHub repository or passing CI does not publish to Universe.
+- [ ] Replace all sample names, IDs, text, diagrams, and table placeholders.
+- [ ] Check that your report stage and sections match your supervisor's instructions.
+- [ ] Verify your citations and bibliography, and support mapping claims with evidence.
+- [ ] Read the exported PDF: cover, contents, numbering, captions, and page breaks.
+- [ ] Keep a backup of your editable sources and assets, not just the PDF.
 
-## Files
+## Need more help?
 
-```text
-main.typ                    Local report entry point; optional user-supplied logo
-lib.typ                     Reusable report layout and styling
-typst.toml                  Package and template metadata
-template/
-  main.typ                  Package starter entry point
-  project.typ               Student and report metadata
-  content.typ               Chapter selection and bibliography
-  front-matter/             Abstract, acknowledgements, optional publications
-  chapters/                 Six editable report chapters
-  assets/context.svg        Replaceable example diagram
-  references.bib            BibTeX bibliography
-  NOTICE.md                 Attribution copied into initialized projects
-docs/                       Student, educator, configuration, publishing guides
-scripts/project.py          Portable build and packaging helper
-packaging/README.md         README used in the Universe submission bundle
-CHANGELOG.md                Version history
-local-assets/               Optional local images; ignored and not distributed
+| I want to…                                             | Read this                                                                              |
+| ------------------------------------------------------ | -------------------------------------------------------------------------------------- |
+| Learn headings, figures, citations, and report writing | [Student guide](docs/STUDENTS.md) · [Typst tutorial](https://typst.app/docs/tutorial/) |
+| Change report settings or add optional pages           | [Configuration reference](docs/CONFIGURATION.md)                                       |
+| Prepare a reviewed copy for a class                    | [Educator guide](docs/EDUCATORS.md)                                                    |
+| Understand differences from the LaTeX original         | [Migration notes](docs/MIGRATION.md)                                                   |
+| Report a template problem                              | [GitHub issues](https://github.com/shaadahmmed/uiu-fydp-template/issues)               |
+
+<details>
+<summary><strong>For maintainers: build this repository</strong></summary>
+
+Students using the published template can skip this section. In a repository
+checkout, editable student files live under **`template/`** rather than at the
+project root. Compile **root `main.typ`** to use the local `lib.typ`.
+
+With Typst 0.15.0+ and Python 3.11+ installed, run from the repository root:
+
+```sh
+python3 scripts/project.py doctor
+python3 scripts/project.py build
+python3 scripts/project.py build --stage fydp-1
+python3 scripts/project.py check
 ```
 
-## License and attribution
+On Windows, use `py -3` instead of `python3` if needed. Reports are written to
+`build/fydp.pdf` and `build/fydp-1.pdf`. GNU Make is optional. These helpers use
+bundled fonts and do not download Typst packages.
 
-The original [Overleaf template](https://www.overleaf.com/latex/templates/united-international-university-fydp-template-department-of-cse/xbkpdgkgjdhc)
-is credited to **Swakkhar Shatabda** and listed under **Creative Commons
-Attribution 4.0 International (CC BY 4.0)**. This adaptation by **Shaad Ahmmed**
-uses the same license. See [LICENSE](LICENSE), [NOTICE](NOTICE), and the
-[license terms](https://creativecommons.org/licenses/by/4.0/).
+See the [publishing guide](docs/PUBLISHING.md) for packaging and release commands,
+[package README](packaging/README.md) for the distributed API documentation, and
+[changelog](CHANGELOG.md) for version history. Changes here do not automatically
+update the published Universe package or existing student projects.
 
-When sharing adapted template material, retain appropriate credit, a license
-link, and an indication of your changes. The starter includes an acknowledgement
-you can use. The license on this template does not automatically license your
-original research, prose, results, or data.
+</details>
 
-No university logo is distributed in the public source or Universe bundle.
-The original workspace logo, if present, is kept in ignored `local-assets/`;
-no separate redistribution clearance for it has been established.
-University names and trademarks are not licensed by this project. The included
-example context diagram was created for this adaptation and uses the template's
-CC BY 4.0 license.
+## Credits and license
+
+Adapted by **Shaad Ahmmed** from the
+[UIU CSE FYDP LaTeX template](https://www.overleaf.com/latex/templates/united-international-university-fydp-template-department-of-cse/xbkpdgkgjdhc)
+by **Swakkhar Shatabda**. Both the original template and this adaptation use
+**[CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)**.
+See [LICENSE](LICENSE) and [NOTICE](NOTICE).
+
+When sharing adapted template material, retain attribution, link the license,
+and identify your changes. This does not automatically license your original
+research, prose, results, or data. No university logo is distributed; university
+names and trademarks are not licensed by this project.

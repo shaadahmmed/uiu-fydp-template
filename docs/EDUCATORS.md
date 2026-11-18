@@ -12,26 +12,27 @@ before distributing it to a class.
    citation style, title-page wording, and required front matter.
 3. Adapt chapter guidance in `template/chapters/`; make formatting changes in
    `lib.typ`. Record your changes and preserve the original attribution.
-4. Distribute a complete repository snapshot, or use the published version once
-   accepted. Specify the exact compiler and package version in course materials.
+4. Share the [published template](https://typst.app/universe/package/academic-uiu-fydp/)
+   or distribute a complete customized repository snapshot. Specify the exact
+   compiler and package version in course materials.
 5. Give students [the student guide](STUDENTS.md) and explain which prompts to
    replace, which sections are mandatory, and which assessment rubric applies.
 
-Do not distribute only `template/` before package publication: its entry point
-depends on the future Universe import. A repository copy builds through root
-`main.typ`; include `lib.typ` and all student files.
+Projects created from Universe use the published package import and own their
+editable files. A customized repository copy builds through root `main.typ`;
+include `lib.typ` and all student files so that local layout changes are used.
 
 ## Suggested review points
 
-| Area | Review |
-| --- | --- |
-| Introduction | Problem, motivation, measurable objectives, method, outcomes |
-| Background | Cited sources, comparisons, gap analysis |
-| Design | Requirements, diagrams, alternatives, rationale, plan, contributions |
-| Implementation | Reproducible environment, tests, evaluation, evidence |
+| Area                      | Review                                                                   |
+| ------------------------- | ------------------------------------------------------------------------ |
+| Introduction              | Problem, motivation, measurable objectives, method, outcomes             |
+| Background                | Cited sources, comparisons, gap analysis                                 |
+| Design                    | Requirements, diagrams, alternatives, rationale, plan, contributions     |
+| Implementation            | Reproducible environment, tests, evaluation, evidence                    |
 | Standards and constraints | Applicable standards, costs, constraints, justified engineering mappings |
-| Conclusion | Outcomes against objectives, limitations, future work |
-| Report quality | Clear captions, correct references, attribution, consistent formatting |
+| Conclusion                | Outcomes against objectives, limitations, future work                    |
+| Report quality            | Clear captions, correct references, attribution, consistent formatting   |
 
 The starter deliberately leaves engineering mappings unselected. Students must
 justify them from their own work. The inherited labels are prompts rather than

@@ -2,17 +2,19 @@
 
 Package: **`academic-uiu-fydp`**, version **`0.1.0`**. Source repository:
 [shaadahmmed/uiu-fydp-template](https://github.com/shaadahmmed/uiu-fydp-template).
-The manifest includes that URL and the author credit. Version 0.1.0 was submitted
-in [typst/packages#6418](https://github.com/typst/packages/pull/6418) from
-`shaadahmmed/typst-package:add-academic-uiu-fydp-0.1.0`. It is awaiting review and
-has not yet been accepted or published. The steps below document the submission
-process; do not open a duplicate PR for this version.
+Version 0.1.0 is **published on [Typst Universe](https://typst.app/universe/package/academic-uiu-fydp/)**
+(first released November 17, 2026). The original submission was
+[typst/packages#6418](https://github.com/typst/packages/pull/6418) from
+`shaadahmmed/typst-package:add-academic-uiu-fydp-0.1.0`.
 
-The PR requests explicit review of the inherited CC BY 4.0 starter terms. The
-official v0.7.0 package checker reports an OSI-only license error even though the
-submission guide permits CC BY licenses. The original license is preserved;
-acceptance depends on the maintainers' review. The template compiles in that
-checker and passes the local integration suite with Typst 0.15.0.
+The numbered steps below record the original submission workflow, not a request
+to resubmit or overwrite 0.1.0. For the next release, start with
+[Future updates](#future-updates) and use the new version throughout.
+
+The original submission requested review of the inherited CC BY 4.0 starter
+terms: the official v0.7.0 package checker reported an OSI-only license error even
+though the submission guide permits CC BY licenses. The original license is
+preserved.
 
 ## What is prepared
 
@@ -145,7 +147,7 @@ cd my-fydp
 typst compile main.typ report.pdf
 ```
 
-Verify that the Universe page has the right thumbnail and **Start from template**
+Verify that the Universe page has the right thumbnail and **Create project in app**
 works in the web app. Then update the source README status and add the actual
 Universe link. You may tag your source release `v0.1.0`. A GitHub tag or release
 alone does not publish to Typst Universe.
